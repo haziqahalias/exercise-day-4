@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
           var items = data.data as List<UserDataModel>;
           return ListView.builder(
               itemCount: items.length,
-              itemBuilder: (context, index) {
+              itemBuilder: (context,int index) {
                 return Card(
                   elevation: 5,
                   margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Container(
                           width: 50,
                           height: 50,
-                          child: Image(image: NetworkImage(items[index].avatar.toString()),fit: BoxFit.fill,),
+                          child: Image(image: NetworkImage((items[index].avatar ?? 'https://www.kindpng.com/picc/m/22-223863_no-avatar-png-circle-transparent-png.png').toString()),fit: BoxFit.fill,),
                         ),
                         Expanded(
                           child: Container(
